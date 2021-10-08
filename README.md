@@ -1,2 +1,2 @@
 # Edyoda
-https://sadiq779.github.io/Edyoda/
+https://sadiq779.github.io/Edyoda
