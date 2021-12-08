@@ -1,0 +1,18 @@
+query one :
+select count(*) from salespeople where sname like 'a%' or sname like 'A%' into outfile 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Query1.csv';
+
+query two :
+select salespeople.Sname, SUM(Orders.Amt) as orders_worth from salespeople
+join orders on orders.Snum=SalesPeople.Snum
+group by Sname
+having SUM(amt) > 2000;
+
+query three :
+selectCOUNT(City) from salespeople where City='Newyork';
+
+query four :
+select COUNT(City) from salespeople where City='London' OR City='Paris';
+
+query five :
+select Snum, COUNT(Snum) as 'No_of_Orders' , GROUP_CONCAT(Odate) as 'Order_Dates' from Orders
+group BY Snum;
